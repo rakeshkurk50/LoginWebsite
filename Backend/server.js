@@ -36,9 +36,19 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+const path = require('path');
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+
+// Serve frontend static files from Backend/public when present
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', (req, res, next) => {
+  // If request is for API, continue to routes
+  if (req.path.startsWith('/api/')) return next();
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
