@@ -1,0 +1,91 @@
+/* Minimal styles to keep the look similar to the React/Tailwind setup */
+.card { border-radius: 0.75rem; }
+.input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #e6e7eb; border-radius: 0.5rem; }
+.input:focus { outline: 2px solid rgba(99,102,241,0.25); }
+.btn-primary { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: white; padding: 0.6rem 1rem; border-radius: 0.5rem; display: inline-block; }
+.btn-outline { background: white; border: 1px solid #6366f1; color: #6366f1; padding: 0.6rem 1rem; border-radius: 0.5rem; display: inline-block; }
+.error{min-height:1rem}
+.toast{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%) translateY(-8px);background:#111827;color:white;padding:0.6rem 1rem;border-radius:0.75rem;box-shadow:0 10px 30px rgba(2,6,23,0.2);z-index:60;opacity:0;pointer-events:none;transition:transform 220ms ease,opacity 220ms ease}
+.toast.toast--show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.toast.toast--success{background:linear-gradient(90deg,#10b981,#06b6d4);color:white}
+.toast.toast--error{background:linear-gradient(90deg,#ef4444,#f97316);color:white}
+.hidden{display:none}
+
+/* User card grid styles */
+#usersGrid { padding: 1rem 0; }
+.user-card {
+	background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+	border: 1px solid #eef2ff;
+	border-radius: 0.75rem;
+	padding: 1rem;
+	box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+	transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+	opacity: 0;
+	transform: translateY(16px) scale(0.995);
+}
+.user-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,42,0.12); }
+.user-card .avatar {
+	width:54px; height:54px; border-radius:12px; background:linear-gradient(135deg,#c7d2fe,#e9d5ff); display:flex; align-items:center; justify-content:center; color:#4c1d95; font-weight:700; font-size:18px;
+}
+.user-meta { display:flex; gap:0.75rem; align-items:center; }
+.user-name { font-weight:700; color:#3b82f6; }
+.user-role { color:#64748b; font-size:0.9rem; }
+.user-contact { color:#334155; font-size:0.95rem; }
+
+/* Entrance animation utility - we'll trigger with inline delay */
+.enter { opacity:1; transform:none; }
+
+/* small responsive tweaks */
+@media (max-width: 640px) {
+	.card { padding: 1rem; }
+}
+
+/* HERO / BACKGROUND styles */
+body.hero {
+	background-image: url('bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+
+/* fallback gradient when bg image missing (keeps readable) */
+body.hero {
+	background-color: #0f172a;
+	background-image: linear-gradient(180deg, rgba(14,22,34,0.6), rgba(99,102,241,0.08)), url('bg.jpg');
+}
+
+.hero-overlay {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 1rem;
+}
+
+.card {
+	background: rgba(255,255,255,0.78);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	color: #0f172a;
+}
+
+.card h1, .card h2 { text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+
+/* Form inputs adapted for background */
+.input, .form-input {
+	background: rgba(255,255,255,0.9);
+	border: 1px solid rgba(15,23,42,0.06);
+	color: #0f172a;
+}
+
+.error { color: #b91c1c; }
+
+/* Slight card max width and spacing */
+.max-card { max-width: 980px; width: 100%; }
+
+/* Make CTA buttons more prominent */
+.btn-primary { box-shadow: 0 8px 24px rgba(99,102,241,0.18); }
+
+/* small adjustments for login toast in login.html (keeps consistent) */
+.fixed-bottom-toast { position: fixed; bottom: 1rem; right: 1rem; }

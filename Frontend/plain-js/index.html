@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Registration - Plain JS</title>
+    <!-- Optional meta used by hosting to inject API base; set to backend during local development -->
+    <meta name="api-base" content="http://localhost:3000/api">
+    <!-- Tailwind CDN for utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="hero">
+    <div class="hero-overlay">
+      <div class="w-full max-card">
+        <div class="card p-6 shadow-xl rounded-xl">
+        <div class="text-center mb-4">
+          <h1 class="text-3xl font-bold text-indigo-600">User Registration</h1>
+          <p class="text-slate-500">Fill in your details to create an account</p>
+        </div>
+
+        <form id="registrationForm" class="space-y-4">
+          <p id="formError" class="text-sm text-red-600 hidden"></p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-slate-700">First Name *</label>
+              <input id="firstName" name="firstName" class="input mt-1" placeholder="Enter your first name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="firstName"></p>
+            </div>
+
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-slate-700">Last Name *</label>
+              <input id="lastName" name="lastName" class="input mt-1" placeholder="Enter your last name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="lastName"></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="mobile" class="block text-sm font-medium text-slate-700">Mobile Number *</label>
+              <input id="mobile" name="mobile" class="input mt-1" placeholder="10 digit mobile number" />
+              <p class="error text-sm text-red-600 mt-1" data-for="mobile"></p>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700">Email Address *</label>
+              <input id="email" name="email" class="input mt-1" placeholder="Enter your email" />
+              <p class="error text-sm text-red-600 mt-1" data-for="email"></p>
+            </div>
+          </div>
+
+          <div>
+            <label for="address" class="block text-sm font-medium text-slate-700">Address *</label>
+            <input id="address" name="address" class="input mt-1" placeholder="Enter your full address" />
+            <p class="error text-sm text-red-600 mt-1" data-for="address"></p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="street" class="block text-sm font-medium text-slate-700">Street *</label>
+              <input id="street" name="street" class="input mt-1" placeholder="Street name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="street"></p>
+            </div>
+
+            <div>
+              <label for="city" class="block text-sm font-medium text-slate-700">City *</label>
+              <input id="city" name="city" class="input mt-1" placeholder="City name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="city"></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="state" class="block text-sm font-medium text-slate-700">State *</label>
+              <input id="state" name="state" class="input mt-1" placeholder="State name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="state"></p>
+            </div>
+
+            <div>
+              <label for="country" class="block text-sm font-medium text-slate-700">Country *</label>
+              <input id="country" name="country" class="input mt-1" placeholder="Country name" />
+              <p class="error text-sm text-red-600 mt-1" data-for="country"></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="username" class="block text-sm font-medium text-slate-700">Username *</label>
+              <input id="username" name="username" class="input mt-1" placeholder="e.g. John1234" />
+              <p class="error text-sm text-red-600 mt-1" data-for="username"></p>
+            </div>
+
+            <div>
+              <label for="password" class="block text-sm font-medium text-slate-700">Password *</label>
+              <input id="password" name="password" type="password" class="input mt-1" placeholder="Strong password" />
+              <p class="error text-sm text-red-600 mt-1" data-for="password"></p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-6">
+            <button id="saveBtn" type="submit" class="btn-primary flex-1">Save Registration</button>
+            <a href="display.html" class="btn-outline flex-1 text-center">View Registered Users</a>
+          </div>
+        </form>
+      </div>
+        </div>
+      </div>
+    </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>

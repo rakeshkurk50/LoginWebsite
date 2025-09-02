@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registered Users - Plain JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Ensure API base points to backend during local development -->
+    <meta name="api-base" content="http://localhost:3000/api">
+  </head>
+  <body class="hero">
+    <div class="hero-overlay">
+      <div class="max-card">
+        <div class="card p-6 shadow-xl rounded-xl">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-600">Registered Users</h2>
+            <p class="text-slate-500">Total users: <span id="totalCount">0</span></p>
+          </div>
+          <div class="flex gap-3">
+            <button id="refreshBtn" class="btn-outline">Refresh</button>
+            <a href="index.html" class="btn-primary">Add New User</a>
+          </div>
+        </div>
+
+        <div id="emptyState" class="text-center py-12 hidden">
+          <div class="mx-auto w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-slate-700 mb-2">No Users Found</h3>
+          <p class="text-slate-500 mb-6">No registered users yet. Click the button below to add the first user.</p>
+          <a href="index.html" class="btn-primary">Register First User</a>
+        </div>
+
+        <div id="tableWrap" class="hidden">
+          <!-- Animated responsive card grid for users -->
+          <div id="usersGrid" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>

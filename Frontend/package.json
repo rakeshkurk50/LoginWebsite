@@ -1,0 +1,14 @@
+{
+  "name": "user-profile-form",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Plain-JS / jQuery version of the user-profile-form (React removed).",
+  "type": "module",
+  "scripts": {
+    "dev": "http-server ./plain-js -p 5173 -a localhost --cors -o -c-1",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

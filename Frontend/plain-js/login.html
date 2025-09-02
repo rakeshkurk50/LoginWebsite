@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - User Registration System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="hero">
+    <div class="hero-overlay">
+      <div class="w-full max-card">
+        <div class="card p-6 shadow-xl rounded-xl">
+        <div class="text-center mb-4">
+          <h1 class="text-3xl font-bold text-indigo-600">Login</h1>
+          <p class="text-slate-500">Sign in to your account</p>
+        </div>
+
+        <form id="loginForm" class="space-y-4">
+          <p id="loginError" class="text-sm text-red-600 hidden"></p>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required class="form-input" />
+            <div class="error text-red-500 text-sm" data-for="email"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required class="form-input" />
+            <div class="error text-red-500 text-sm" data-for="password"></div>
+          </div>
+
+          <div class="flex justify-between items-center mt-6">
+            <button type="submit" id="loginBtn" class="btn-primary">Login</button>
+            <a href="index.html" class="text-indigo-600 hover:text-indigo-800">Need an account? Register</a>
+          </div>
+        </form>
+      </div>
+        </div>
+      </div>
+    </div>
+
+  <div id="toast" class="fixed bottom-4 right-4 bg-slate-800 text-white px-4 py-2 rounded-lg shadow-lg hidden"></div>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>
